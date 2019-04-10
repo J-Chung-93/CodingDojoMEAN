@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Thrones</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $(".stark").click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/362", function(data){
+                    $(".name").html(data.name);
+                })
+            })
+            $(".targaryen").click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/378", function(data){
+                    $(".name").html(data.name);
+                })
+            })
+            $(".lannister").click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/229", function(data){
+                    $(".name").html(data.name);
+                })
+            })
+            $(".baratheon").click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/17", function(data){
+                    $(".name").html(data.name);
+                })
+            })
+        })
+    </script>
+
+    <h1>Game of Thrones</h1>
+    <div>
+        <img src="stark.jpg" alt="House Stark">
+        <button class="stark">House Stark</button>
+    </div>
+    <div>
+        <img src="targaryen.jpg" alt="House Targaryen">
+        <button class="targaryen">House Targaryen</button>
+    </div>
+    <div>
+        <img src="lannister.jpg" alt="House Lannister">
+        <button class="lannister">House Lannister</button>
+    </div>
+    <div>
+        <img src="baratheon.png" alt="House Baratheon">
+        <button class="baratheon">House Baratheon</button>
+    </div>
+    <div>
+        <h3 class="name"></h3>
+    </div>
+</body>
+</html>
