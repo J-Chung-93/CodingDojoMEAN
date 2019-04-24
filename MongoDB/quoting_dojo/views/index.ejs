@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Group Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+        <h1>Welcome to Quoting Dojo</h1>
+        <form action="/quote" method="post">
+        <label>Your Name:</label>
+        <input type="text" name="name" id="name" />
+            <label>Your Quote:</label>
+                <textarea name="quote" rows="3"></textarea>
+        <input type="submit" value="Add my quote!" />
+        </form>
+        <a href="/quotes"><button>Go to quotes</button></a>
+        <br />
+    </body>
+    <% if(typeof(errors) != 'undefined' ) { %>
+    <p>2+ Characters must be in both input fields</p>
+    <p><%= errors%></p>
+    <% for (var x in errors) { %>
+    <h3><%= errors[x].quote %></h3>
+    <% } %>
+</html>
